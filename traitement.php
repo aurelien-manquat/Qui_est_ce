@@ -95,7 +95,7 @@ if ($mensonge == 0) {
 
 // Affichage personnage
 echo "<h2>Personnage trouvé :</h2>";
-echo "<img src='picture/$perso.jpg' width='200'>";
+echo "<img src='pictures/$perso.jpg' width='200'>";
 
 // Affichage debug 
 echo "<h3>Détails :</h3>";

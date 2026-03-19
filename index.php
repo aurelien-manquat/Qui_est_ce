@@ -15,7 +15,7 @@
 for ($i = 0; $i < 16; $i++) {
 
     echo "<td>";
-    echo "<img src='picture/$i.jpg' width='200'>";
+    echo "<img src='pictures/$i.jpg' width='100'>";
     echo "</td>";
 
     // retour à la ligne tous les 4
