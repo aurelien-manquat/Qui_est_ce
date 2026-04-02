@@ -9,49 +9,57 @@
 
 <h1>Qui est-ce ?</h1>
 
-<table border="1">
-<tr>
-<?php
-for ($i = 0; $i < 16; $i++) {
+<div class="container">
 
-    echo "<td>";
-    echo "<img src='pictures/$i.jpg' width='100'>";
-    echo "</td>";
+    <div class="gauche">
+        <table>
+            <tr>
+            <?php
+            for ($i = 0; $i < 16; $i++) {
 
-    // retour à la ligne tous les 4
-    if (($i + 1) % 4 == 0) {
-        echo "</tr><tr>";
-    }
-}
-?>
-</tr>
-</table>
+                echo "<td class='carte'>";
+                echo "<img src='pictures/$i.jpg'>";
+                echo "</td>";
 
-<form method="POST" action="traitement.php">
+                if (($i + 1) % 4 == 0) {
+                    echo "</tr><tr>";
+                }
+            }
+            ?>
+            </tr>
+        </table>
+    </div>
 
-<?php
-$questions = [
-    "A-t-il des lunettes ?",
-    "A-t-il une moustache ?",
-    "A-t-il un chapeau ?",
-    "A-t-il des cheveux ?",
-    "A-t-il une boucle d'oreille ?",
-    "A-t-il une barbe ?",
-    "A-t-il un noeud papillon ?"
-];
+    
+    <div class="droite">
+        <form method="POST" action="traitement.php">
 
-for ($i = 0; $i < 7; $i++) {
-    echo "<p>";
-    echo ($i+1) . ". " . $questions[$i] . "<br>";
-    echo "<input type='radio' name='q$i' value='1' required> Oui ";
-    echo "<input type='radio' name='q$i' value='0'> Non ";
-    echo "</p>";
-}
-?>
+        <?php
+        $questions = [
+            "A-t-il des lunettes ?",
+            "A-t-il une moustache ?",
+            "A-t-il un chapeau ?",
+            "A-t-il des cheveux ?",
+            "A-t-il une boucle d'oreille ?",
+            "A-t-il une barbe ?",
+            "A-t-il un noeud papillon ?"
+        ];
 
-<input type="submit" value="Trouver le personnage">
+        for ($i = 0; $i < 7; $i++) {
+            echo "<p>";
+            echo ($i+1) . ". " . $questions[$i] . "<br>";
+            echo "<input type='radio' name='q$i' value='1' required> Oui ";
+            echo "<input type='radio' name='q$i' value='0'> Non ";
+            echo "</p>";
+        }
+        ?>
 
-</form>
+        <input type="submit" value="Trouver le personnage">
+
+        </form>
+    </div>
+
+</div>
 
 </body>
 </html>
